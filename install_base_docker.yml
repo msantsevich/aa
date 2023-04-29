@@ -1,6 +1,6 @@
 ---
 - name: Установка базовых пакетов и Docker
-  hosts: all
+  hosts: webservers
   become: true
 
   tasks:
