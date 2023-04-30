@@ -11,9 +11,9 @@
     enabled: yes
 
 - name: Configure Nginx
-  copy:
+  ansible.builtin.template:
     src: files/nginx.conf
     dest: /etc/nginx/nginx.conf
-  notify:
-    - restart nginx
 
+- name: restart nginx
+  service: name=nginx state=restarted enabled=yes
